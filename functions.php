@@ -198,7 +198,6 @@ function rpt_add_role_caps() {
 		$role->add_cap( 'read_gamelog_document');
     $role->add_cap( 'edit_gamelog_document' );
     $role->add_cap( 'publish_gamelog_documents' );
-		$role->add_cap( 'delete_gamelog_document' );
 
 
 }
