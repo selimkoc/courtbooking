@@ -195,36 +195,12 @@ function rpt_add_role_caps() {
     $role->add_cap( 'read_private_game_documents' );
     $role->add_cap( 'delete_game_document' );
 
-		$role->add_cap( 'read_gamelog_document');
-    $role->add_cap( 'edit_gamelog_document' );
+    $role->add_cap( 'read_gamelog_document');
     $role->add_cap( 'publish_gamelog_documents' );
 
 
 }
 
-
-function wpse28782_remove_menu_items() {
-    if( !current_user_can( 'administrator' ) ):
-        remove_menu_page( 'edit.php?post_type=gamelogs' );
-    endif;
-}
-add_action( 'admin_menu', 'wpse28782_remove_menu_items' );
-
-
-
-// Remove add new Game Log menu on Admin Area
-function admin_style() {
-  wp_enqueue_style('admin-styles', get_template_directory_uri().'/remove-gamelog.css');
-}
-add_action('admin_enqueue_scripts', 'admin_style');
-
-
-add_action('init', 'my_custom_css_stylesheet');
-
-function my_custom_css_stylesheet() {
-    wp_register_style( 'custom-design', get_template_directory_uri().'/remove-gamelog.css' );
-}
-wp_enqueue_style( 'custom-design' );
 
 
 function set_ready_games_to_free_court($location)
